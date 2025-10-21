@@ -8,3 +8,15 @@ module "catalogue" {
     Name= "Modules-Demo"
   }
 }
+
+output "pub-ip" {
+  value = module.catalogue.public-ip
+}
+
+output "priv-ip" {
+  value = module.catalogue.private-ip
+}
+
+output "instance-id" {
+  value = module.catalogue.instance-id
+}
