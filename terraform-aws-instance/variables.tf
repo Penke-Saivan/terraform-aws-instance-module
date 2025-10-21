@@ -6,6 +6,11 @@ variable "ami_id" {
 variable "instance_type" {
   type = string
   #   default = "t3.micro"
+  validation {
+    condition     = contains(["t3.micro", "t3,small", "t3,medium"], var.instance_type)
+    error_message = "instance type should be any one of them -t3.micro, t3,small, t3,medium"
+  }
+
 }
 
 variable "vpc_security_group_ids" {
